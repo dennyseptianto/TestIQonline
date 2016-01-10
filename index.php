@@ -72,6 +72,9 @@
 		case 'description':
 			include('description.php');
 			break;
+		case 'kontak':
+			include('kontak.php');
+			break;
 		default:
 			include('home.php');
 			break;
