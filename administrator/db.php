@@ -1,7 +1,7 @@
 <?php
 $db = null;
 	try{
-		$db = new PDO("mysql:host=mysql.idhostinger.com;dbname=u624168925_denny", "u624168925_denny", "Denny007");
+		$db = new PDO("mysql:host=localhost;dbname=testkec", "root", "");
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		} catch(PDOException $e) {
 		echo $e->getMessage();
@@ -374,16 +374,27 @@ $db = null;
 			}
 			 try{
 				$sql = 'update admin set passid = :password, 
-						acces = :akses, index = :index, nama = :nama
+						acces = :akses, nama = :nama
 						where userid = :id';
 				$ssql = $db->prepare($sql);
-				$ssql->execute(array(':password' => md5('default'), ':akses' => $detail[0]['acces'], ':index' => $detail[0]['index'], 
+				$ssql->execute(array(':password' => md5('default'), ':akses' => $detail[0]['acces'],  
 									':nama' => $detail[0]['nama'], 'id' => $detail[0]['userid'] ));?>
 				<script language="JavaScript">alert('Password Berhasil di Reset');
-				document.location='page=admin'</script> <?php
+				document.location='admin.php?page=admin'</script> <?php
 			} catch (PDOException $e){
 				echo '<script>alert("Reset Password Gagal");</script>'.$e->getMessage();
 			}
+		}
+		else if($_GET['act']=='hapus' && $_GET['module'] == 'kontak')
+		{
+			  $sql = "DELETE FROM kontak WHERE id = :id";
+			  $ssql = $db->prepare($sql);
+			  $ssql->bindParam(':id', $id);
+			  $id = ($_GET['id']);
+			  $ssql->execute();
+			  ?>
+			<script language="JavaScript">alert('Hapus Pesan Sukses');
+					document.location='admin.php?page=kontak'</script> <?php
 		}
 	}
 	
