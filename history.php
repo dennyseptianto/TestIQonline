@@ -65,8 +65,12 @@
 					<!-- untuk judul halaman -->
 		<div class="typrography">
 	 <div class="container">
+				<a href="?page=statistik"><button type="submit" class="btn btn-info" style="position:absolute">Back</button> </a>
+				<br>
 				<article class="isi">
-					<table id="IQ">
+					<h3 align="center">Hasil TestMu</h3>
+					</br>
+					<table align="center" id="IQ">
 						<thead>
 							<tr>
 								<th width="5%">No</th>
