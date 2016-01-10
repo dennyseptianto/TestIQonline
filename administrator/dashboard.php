@@ -36,10 +36,16 @@
                 	<span>Stats</span>
                 </a>
                 
+				<a href="?page=kontak" class="dashboard-module">
+                	<img src="Crystal_Project_mail_open.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/Crystal_Clear_mail_open.gif" width="64" height="64" alt="edit" />
+                	<span>Kontak</span>
+                </a>
+				
                 <a href="?page=setting" class="dashboard-module">
                 	<img src="Crystal_Clear_settings.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/Crystal_Clear_settings.gif" width="64" height="64" alt="edit" />
                 	<span>Settings</span>
                 </a>
+				
                 <div style="clear: both"></div>
             </div> <!-- End .grid_7 -->
             
