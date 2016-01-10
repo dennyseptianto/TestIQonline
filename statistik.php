@@ -10,7 +10,7 @@
 								plotShadow: false
 							},
 							title: {
-								text: 'Statistik IQ'
+								text: 'Statistik IQ Keseluruhan'
 							},
 							tooltip: {
 								formatter: function() {
@@ -54,7 +54,7 @@
 						renderTo: 'graph'
 					},
 					title: {
-						text: 'Statistik IQ'
+						text: 'Statistik IQ Keseluruhan'
 					},
 					xAxis: {
 						categories: ['Anak-anak', 'Remaja', 'Dewasa']
@@ -157,7 +157,7 @@
 					<!-- untuk judul halaman -->
 		<div class="typrography">
 	 <div class="container">
-				<a href="?page=history"><button type="submit" class="btn btn-info" style="position:absolute">Lihat Juga Histori Test</button> </a>
+				<a href="?page=history"><button type="submit" class="btn btn-info" style="position:absolute">Lihat Juga Histori Testmu</button> </a>
 				<article class="isi">	
 						<div id="graf" style="width: 600px; height: 300px; margin: 30px auto"></div>
 						<div id="graph" style="width: 600px; height: 300px; margin: 30px auto"></div>
