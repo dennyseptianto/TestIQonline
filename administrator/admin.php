@@ -262,7 +262,7 @@
 		
 		<script>
 			function checkMe() {
-				if (confirm("Apakah Anda Seius")) {
+				if (confirm("Apakah Anda Serius?")) {
 					return true;
 				} else {
 					return false;
@@ -391,10 +391,13 @@
             <!-- Header. Status part -->
             <div id="header-status">
                 <div class="container_12">
-                    <div class="grid_8">
-					&nbsp;
+					<div class="grid_1 grid_2" style="margin-top:5px">
+                        <a href="admin.php?page=home" style="color:white">
+                        <h3>Test IQ Online<h3>
+                        </a>
                     </div>
-                    <div class="grid_4">
+                    
+                    <div class="grid_10">
                         <a href="logout.php" id="logout">
                         Logout
                         </a>
@@ -424,6 +427,7 @@
 												}
 										echo '<li><a href="?page=ujian">Data Tes</a></li>
 											<li><a href="?page=statistik">Statistik</a></li>
+											<li><a href="?page=kontak">Kontak</a></li>
 											<li><a href="?page=setting">Settings</a></li>';
 										break;
 									case 'soal':
@@ -436,6 +440,7 @@
 												}
 										echo '<li><a href="?page=ujian">Data Tes</a></li>
 											<li><a href="?page=statistik">Statistik</a></li>
+											<li><a href="?page=kontak">Kontak</a></li>
 											<li><a href="?page=setting">Settings</a></li>';
 										break;
 									case 'input':
@@ -448,6 +453,7 @@
 												}
 										echo '<li><a href="?page=ujian">Data Tes</a></li>
 											<li><a href="?page=statistik">Statistik</a></li>
+											<li><a href="?page=kontak">Kontak</a></li>
 											<li><a href="?page=setting">Settings</a></li>';
 										break;
 									case 'admin':
@@ -460,6 +466,7 @@
 												}
 										echo '<li><a href="?page=ujian">Data Tes</a></li>
 											<li><a href="?page=statistik">Statistik</a></li>
+											<li><a href="?page=kontak">Kontak</a></li>
 											<li><a href="?page=setting">Settings</a></li>';
 										break;
 									case 'plus':
@@ -472,6 +479,7 @@
 												}
 										echo '<li><a href="?page=ujian">Data Tes</a></li>
 											<li><a href="?page=statistik">Statistik</a></li>
+											<li><a href="?page=kontak">Kontak</a></li>
 											<li><a href="?page=setting">Settings</a></li>';
 										break;
 									case 'user':
@@ -484,6 +492,7 @@
 												}
 										echo '<li><a href="?page=ujian">Data Tes</a></li>
 											<li><a href="?page=statistik">Statistik</a></li>
+											<li><a href="?page=kontak">Kontak</a></li>
 											<li><a href="?page=setting">Settings</a></li>';
 										break;
 									case 'setting':
@@ -496,6 +505,7 @@
 												}
 										echo '<li><a href="?page=ujian">Data Tes</a></li>
 											<li><a href="?page=statistik">Statistik</a></li>
+											<li><a href="?page=kontak">Kontak</a></li>
 											<li id="current"><a href="?page=setting">Settings</a></li>';
 										break;
 									case 'ujian':
@@ -508,6 +518,7 @@
 												}
 										echo '<li id="current"><a href="?page=ujian">Data Tes</a></li>
 											<li><a href="?page=statistik">Statistik</a></li>
+											<li><a href="?page=kontak">Kontak</a></li>
 											<li><a href="?page=setting">Settings</a></li>';
 										break;
 									case 'statistik':
@@ -520,6 +531,20 @@
 												}
 										echo '<li><a href="?page=ujian">Data Tes</a></li>
 											<li id="current"><a href="?page=statistik">Statistik</a></li>
+											<li><a href="?page=kontak">Kontak</a></li>
+											<li><a href="?page=setting">Settings</a></li>';
+										break;
+									case 'kontak':
+										echo '<li><a href="?page=home">Dashboard</a></li>
+											<li><a href="?page=soal">Soal</a></li>
+											<li><a href="?page=user">User</a></li>';
+												if($acces == 0)
+												{
+													echo '<li><a href="?page=admin">Admin</a></li>';
+												}
+										echo '<li><a href="?page=ujian">Data Tes</a></li>
+											<li><a href="?page=statistik">Statistik</a></li>
+											<li  id="current"><a href="?page=kontak">Kontak</a></li>
 											<li><a href="?page=setting">Settings</a></li>';
 										break;
 									default:
@@ -532,6 +557,7 @@
 												}
 										echo '<li><a href="?page=ujian">Data Tes</a></li>
 											<li><a href="?page=statistik">Statistik</a></li>
+											<li><a href="?page=kontak">Kontak</a></li>
 											<li><a href="?page=setting">Settings</a></li>';
 										break;
 									}
@@ -549,6 +575,7 @@
 												}
 										echo '<li><a href="?page=ujian">Data Tes</a></li>
 											<li><a href="?page=statistik">Statistik</a></li>
+											<li><a href="?page=kontak">Kontak</a></li>
 											<li><a href="?page=setting">Settings</a></li>';
 										break;
 									case 'admin':
@@ -561,6 +588,7 @@
 												}
 										echo '<li><a href="?page=ujian">Data Tes</a></li>
 											<li><a href="?page=statistik">Statistik</a></li>
+											<li><a href="?page=kontak">Kontak</a></li>
 											<li><a href="?page=setting">Settings</a></li>';
 										break;
 									default:
@@ -573,6 +601,7 @@
 											}
 									echo '<li><a href="?page=ujian">Data Tes</a></li>
 										<li><a href="?page=statistik">Statistik</a></li>
+										<li><a href="?page=kontak">Kontak</a></li>
 										<li><a href="?page=setting">Settings</a></li>';
 									}
 								}
@@ -587,6 +616,7 @@
 											}
 									echo '<li><a href="?page=ujian">Data Tes</a></li>
 										<li><a href="?page=statistik">Statistik</a></li>
+										<li><a href="?page=kontak">Kontak</a></li>
 										<li><a href="?page=setting">Settings</a></li>';
 								}
 								?>
@@ -635,6 +665,9 @@
 			case 'statistik':
 				include('statistik.php');
 				break;	
+			case 'kontak':
+				include('kontak.php');
+				break;
 			default:
 				include('dashboard.php');
 				break;
@@ -665,7 +698,7 @@
         	<div class="container_12">
             	<div class="grid_12">
                 	<!-- You can change the copyright line for your own -->
-                	<p>&copy; 2010. <a href="http://www.templatescreme" title="Visit For More Free Website Templates">Free Website Templates</a></p>
+                	<p>&copy; 2015. <a href="http://www.templatescreme" title="Visit For More Free Website Templates">Free Website Templates</a></p>
         		</div>
             </div>
             <div style="clear:both;"></div>
