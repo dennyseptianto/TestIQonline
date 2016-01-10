@@ -19,10 +19,16 @@
 										if($_SESSION['username'] || isset($_SESSION['username'])) {
 											foreach($atas as $data)
 											{
-												
+												if($data['index']==1)
+												{
+													echo '<li>
+													<a href='.$data['link'].'>
+													<span data-hover='.$data['nama'].'>'.$data['nama'].'</span></a>
+													</li>';
+												}
 												if($data['kategori']==1){
 													
-													if($data['index']==5){
+													if($data['index']==4){
 														echo '<li role="presentation" class="dropdown">
 																<a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false"><span data-hover='.$data['nama'].'>'.$data['nama'].'</span></a>
 																<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
@@ -39,6 +45,7 @@
 														</a>
 														</li>';
 													}
+													
 												}
 											}
 										}
@@ -46,13 +53,13 @@
 									else {	
 										foreach($atas as $data)
 										{
-											if($data['kategori']==0 || $data['kategori']==2){
+											if($data['kategori']==0 ){
 												echo '<li>
 													<a href='.$data['link'].'>
 													<span data-hover='.$data['nama'].'>'.$data['nama'].'</span></a>
 													</li>';
 												}
-											if($data['index']==4)
+											if($data['index']==5)
 											{echo '<li>
 													<a href='.$data['link'].'>
 													<span data-hover='.$data['nama'].'>'.$data['nama'].'</span></a>
