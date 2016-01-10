@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 27 Okt 2015 pada 04.35
+-- Generation Time: 06 Jan 2016 pada 07.44
 -- Versi Server: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `passid` varchar(40) NOT NULL,
   `nama` varchar(40) NOT NULL,
   `acces` int(1) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `admin`
@@ -40,7 +40,31 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 INSERT INTO `admin` (`indek`, `userid`, `passid`, `nama`, `acces`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Denny Septianto', 0),
-(8, 'superadmin', '17c4520f6cfd1ab53d8745e84681eb49', 'Super Admin', 0);
+(11, 'Aldhi', '63a9f0ea7bb98050796b649e85481845', 'Aldhi', 1),
+(10, 'aris', '288077f055be4fadc3804a69422dd4f8', 'aris mulya', 1),
+(12, 'yuniarief', 'e10adc3949ba59abbe56e057f20f883e', 'yuniarief', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kontak`
+--
+
+CREATE TABLE IF NOT EXISTS `kontak` (
+  `id` int(5) NOT NULL,
+  `nama` varchar(25) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `subjek` varchar(30) NOT NULL,
+  `pesan` varchar(100) NOT NULL,
+  `tgl_psn` date NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `kontak`
+--
+
+INSERT INTO `kontak` (`id`, `nama`, `email`, `subjek`, `pesan`, `tgl_psn`) VALUES
+(1, 'ares ganteng', 'tekek79@gmail.com', 'mau tanya', 'berapa harga bbm sekarang,?', '2016-01-06');
 
 -- --------------------------------------------------------
 
@@ -53,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `menu_atas` (
   `nama` varchar(20) NOT NULL,
   `kategori` int(11) NOT NULL,
   `link` varchar(30) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `menu_atas`
@@ -62,11 +86,11 @@ CREATE TABLE IF NOT EXISTS `menu_atas` (
 INSERT INTO `menu_atas` (`index`, `nama`, `kategori`, `link`) VALUES
 (1, 'Home', 0, '?page=index'),
 (6, 'Sign In', 0, '?page=login'),
-(2, 'Statistik', 1, '?page=statistik'),
-(3, 'Tes IQ', 1, '?page=tes'),
-(4, 'Contact', 1, '?page=contact'),
+(3, 'Statistik', 1, '?page=statistik'),
+(2, 'Tes IQ', 1, '?page=tes'),
+(5, 'Contact', 1, '?page=contact'),
 (7, 'Log Out', 1, 'logout.php'),
-(5, 'Setting', 1, 'index.php?page=setting');
+(4, 'Setting', 1, '?page=setting');
 
 -- --------------------------------------------------------
 
@@ -88,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `menu_samping` (
 --
 
 CREATE TABLE IF NOT EXISTS `peserta` (
-  `id` char(20) NOT NULL,
+  `id` char(10) NOT NULL,
   `password` varchar(50) NOT NULL,
   `nama` varchar(40) NOT NULL,
   `email` varchar(30) NOT NULL,
@@ -101,10 +125,10 @@ CREATE TABLE IF NOT EXISTS `peserta` (
 --
 
 INSERT INTO `peserta` (`id`, `password`, `nama`, `email`, `tgl_lahir`, `tgl_daftar`) VALUES
-('indraokt', 'e00b29d5b34c3f78df09d45921c9ec47', 'Dwi Indra Oktoviandy', 'mrx_koplax@yahoo.com', '1994-10-14', '2013-12-14'),
-('Feri', '3ee138f529418987592c459eb8b71432', 'Feri Ganteng', 'feri_ganteng01@yahoo.com', '2000-05-30', '2013-12-28'),
-('Denny', '827ccb0eea8a706c4c34a16891f84e7b', 'Denny Septianto', 'septiantodenny@gmail.com', '1994-09-12', '2015-09-27'),
-('arif', '0ff6c3ace16359e41e37d40b8301d67f', 'arif', 'arif@mail.com', '1992-09-01', '2015-09-27');
+('yuniarief', 'e10adc3949ba59abbe56e057f20f883e', 'yuniarief', 'yuniarief92@gmail.com', '1992-01-17', '2016-01-06'),
+('aak', '63a9f0ea7bb98050796b649e85481845', 'kurniawan', 'aakplengeh@gmail.com', '2016-01-14', '2016-01-06'),
+('denny', '3425f115ee1ecf591fb06d635c37d990', 'Denny Septianto', 'septiantodenny@gmail.com', '1994-09-12', '2016-01-02'),
+('ares', '1769d06df18cb4c2b01931d7f83f3c9a', 'ares ganteng', 'tekek79@gmail.com', '1994-09-07', '2016-01-06');
 
 -- --------------------------------------------------------
 
@@ -217,20 +241,20 @@ CREATE TABLE IF NOT EXISTS `ujian` (
   `kd_kategori` varchar(5) NOT NULL,
   `tanggal` date NOT NULL,
   `skor` int(3) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `ujian`
 --
 
 INSERT INTO `ujian` (`no_ujian`, `id`, `kd_kategori`, `tanggal`, `skor`) VALUES
-(4, 'indraokt', 'k1', '2013-12-28', 100),
-(5, 'indraokt', 'k1', '2013-12-28', 109),
-(13, 'Feri', 'k1', '2013-12-28', 103),
-(17, 'Feri', 'k2', '2013-12-28', 103),
-(24, 'indraokt', 'k3', '2014-01-09', 130),
-(19, 'Feri', 'k2', '2013-12-28', 97),
-(21, 'Feri', 'k3', '2013-12-28', 124),
+(66, 'denny', 'k1', '2016-01-05', 70),
+(60, 'arif', 'k1', '2016-01-01', 70),
+(59, 'arif', 'k1', '2016-01-01', 70),
+(58, 'denny', 'k2', '2015-12-29', 70),
+(57, 'denny', 'k2', '2015-12-29', 70),
+(56, 'ari', 'k3', '2015-12-29', 73),
+(55, 'arif', 'k1', '2015-12-14', 73),
 (25, 'Denny', 'k3', '2015-09-27', 121),
 (26, 'denny', 'k1', '2015-09-27', 118),
 (27, 'arif', 'k1', '2015-10-26', 70),
@@ -260,7 +284,18 @@ INSERT INTO `ujian` (`no_ujian`, `id`, `kd_kategori`, `tanggal`, `skor`) VALUES
 (51, 'arif', 'k1', '2015-10-26', 70),
 (52, 'arif', 'k1', '2015-10-26', 70),
 (53, 'arif', 'k2', '2015-10-26', 73),
-(54, 'arif', 'k1', '2015-10-27', 70);
+(54, 'arif', 'k1', '2015-10-27', 70),
+(62, 'arif', 'k1', '2016-01-01', 70),
+(63, 'arif', 'k1', '2016-01-01', 70),
+(64, 'denny', '', '2016-01-01', 70),
+(65, 'denny', 'k1', '2016-01-01', 70),
+(67, 'denny', 'k1', '2016-01-05', 70),
+(68, 'denny', 'k3', '2016-01-06', 94),
+(69, 'ares', 'k3', '2016-01-06', 100),
+(70, 'ares', 'k1', '2016-01-06', 151),
+(71, 'ares', 'k1', '2016-01-06', 73),
+(72, 'aak', 'k1', '2016-01-06', 70),
+(73, 'yuniarief', 'k1', '2016-01-06', 70);
 
 --
 -- Indexes for dumped tables
@@ -274,6 +309,12 @@ ALTER TABLE `admin`
   ADD UNIQUE KEY `userid` (`userid`);
 
 --
+-- Indexes for table `kontak`
+--
+ALTER TABLE `kontak`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `menu_atas`
 --
 ALTER TABLE `menu_atas`
@@ -284,12 +325,6 @@ ALTER TABLE `menu_atas`
 --
 ALTER TABLE `menu_samping`
   ADD PRIMARY KEY (`index`);
-
---
--- Indexes for table `peserta`
---
-ALTER TABLE `peserta`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `soal`
@@ -318,12 +353,17 @@ ALTER TABLE `ujian`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `indek` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `indek` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT for table `kontak`
+--
+ALTER TABLE `kontak`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `menu_atas`
 --
 ALTER TABLE `menu_atas`
-  MODIFY `index` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `index` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `menu_samping`
 --
@@ -338,7 +378,7 @@ ALTER TABLE `soal`
 -- AUTO_INCREMENT for table `ujian`
 --
 ALTER TABLE `ujian`
-  MODIFY `no_ujian` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
+  MODIFY `no_ujian` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=74;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
