@@ -2,7 +2,7 @@
 session_start();
 $db = null;
 try{
-	$db = new PDO("mysql:host=mysql.idhostinger.com;dbname=u624168925_denny", "u624168925_denny", "Denny007");
+	$db = new PDO("mysql:host=localhost;dbname=testkec", "root", "");
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	} catch(PDOException $e) {
 	echo $e->getMessage();
@@ -194,7 +194,7 @@ if(isset($_SESSION['username']))
 }
 
 try{
-    $sql = 'SELECT * FROM menu_atas';
+    $sql = 'SELECT * FROM menu_atas ORDER BY `index` ASC';
     $atas = $db->query($sql);
 	} catch (PDOException $e) {
 		echo $e->getMessage();
@@ -240,6 +240,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 					document.location='index.php'</script> <?php
 			} catch (PDOException $e){
 				echo '<script>alert("Daftar Gagal");</script>'.$e->getMessage(); 
+			}
+		}
+	}
+	if(isset($_POST['kirim_psn']))
+	{
+		if($_POST['kirim_psn']){
+			try{
+				$tgl_psn=date("Y-m-d");
+				$sql = 'insert into kontak value 
+						(:id, :nama, :email, :subjek, :pesan, :tgl_psn)';
+				$ssql = $db->prepare($sql);
+				$ssql->execute(array(':id' => "", ':nama' => $_POST['nama'], ':email' => $_POST['email'], ':subjek' => $_POST['subjek'], ':pesan' => $_POST['pesan'], ':tgl_psn' => $tgl_psn));?>
+					<script language="JavaScript">alert('Pesan Terkirim!!');
+					document.location='index.php?page=contact'</script> <?php
+			} catch (PDOException $e){
+				echo '<script>alert("Pesan Gagal Dikirim");</script>'.$e->getMessage(); 
 			}
 		}
 	}
