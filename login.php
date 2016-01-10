@@ -18,7 +18,7 @@
 								<input  class="mail2" type="text" name="login" value="" placeholder="Username" required onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}">
 								<input class="mail2" type="password" name="password" value="" placeholder="Password" required onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
 								
-								<input  type="checkbox">Remember me</input><br/><br/>
+								
 								<button type="submit" name="commit" value="Login" class="btn btn-info">Sign In</button>
 								
 							</form>
